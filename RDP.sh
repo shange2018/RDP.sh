@@ -13,6 +13,8 @@ sudo DEBIAN_FRONTEND=noninteractive \
 apt install --assume-yes xfce4
 sudo apt install xfce4-terminal
 sudo apt remove gnome-terminal
+sudo apt install net-tools # ifconfig
+sudo apt install iputils-ping # ping
 sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'  
 sudo apt install --assume-yes xscreensaver
 sudo systemctl disable lightdm.service

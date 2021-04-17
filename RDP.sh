@@ -21,7 +21,37 @@ sudo systemctl disable lightdm.service
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
-sudo apt install nautilus nano -y 
+sudo apt install nautilus nano -y
+sudo apt-get install  language-pack-zh-han*
+sudo apt install $(check-language-support)
+#修改配置文件
+sudo bash -c 'echo LANG=\"zh_CN.UTF-8\" > /etc/default/locale'
+sudo bash -c 'echo LANGUAGE=\"zh_CN:zh\" >> /etc/default/locale'
+sudo bash -c 'echo LC_NUMERIC=\"zh_CN\" >> /etc/default/locale'
+sudo bash -c 'echo LC_TIME=\"zh_CN\" >> /etc/default/locale'
+sudo bash -c 'echo LC_MONETARY=\"zh_CN\" >> /etc/default/locale'
+sudo bash -c 'echo LC_PAPER=\"zh_CN\" >> /etc/default/locale'
+sudo bash -c 'echo LC_NAME=\"zh_CN\" >> /etc/default/locale'
+sudo bash -c 'echo LC_ADDRESS=\"zh_CN\" >> /etc/default/locale'
+sudo bash -c 'echo LC_TELEPHONE=\"zh_CN\" >> /etc/default/locale'
+sudo bash -c 'echo LC_MEASUREMENT=\"zh_CN\" >> /etc/default/locale'
+sudo bash -c 'echo LC_IDENTIFICATION=\"zh_CN\" >> /etc/default/locale'
+sudo bash -c 'echo LC_ALL=\"zh_CN.UTF-8\" >> /etc/default/locale'
+#修改环境文件(环境变量(当前用户))
+sudo bash -c 'echo LANG=\"zh_CN.UTF-8\" >> /etc/environment'
+sudo bash -c 'echo LANGUAGE=\"zh_CN:zh\" >> /etc/environment'
+sudo bash -c 'echo LC_NUMERIC=\"zh_CN\" >> /etc/environment'
+sudo bash -c 'echo LC_TIME=\"zh_CN\" >> /etc/environment'
+sudo bash -c 'echo LC_MONETARY=\"zh_CN\" >> /etc/environment'
+sudo bash -c 'echo LC_PAPER=\"zh_CN\" >> /etc/environment'
+sudo bash -c 'echo LC_NAME=\"zh_CN\" >> /etc/environment'
+sudo bash -c 'echo LC_ADDRESS=\"zh_CN\" >> /etc/environment'
+sudo bash -c 'echo LC_TELEPHONE=\"zh_CN\" >> /etc/environment'
+sudo bash -c 'echo LC_MEASUREMENT=\"zh_CN\" >> /etc/environment'
+sudo bash -c 'echo LC_IDENTIFICATION=\"zh_CN\" >> /etc/environment'
+sudo bash -c 'echo LC_ALL=\"zh_CN.UTF-8\" >> /etc/environment'
+#修改环境文件(环境变量(所有用户))
+sudo bash -c 'echo LANG=\"zh_CN.UTF-8\" >> /etc/profile'
 sudo adduser N3LK chrome-remote-desktop
 } &> /dev/null &&
 printf "\nSetup Complete " >&2 ||

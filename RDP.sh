@@ -12,7 +12,7 @@ sudo apt install iputils-ping # ping
 #安装谷歌远程桌面
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 sudo dpkg --install chrome-remote-desktop_current_amd64.deb
-sudo adduser N3LK chrome-remote-desktop
+
 #sudo apt install --assume-yes --fix-broken
 #设置环境变量吗，非交互获得用户输入
 sudo DEBIAN_FRONTEND=noninteractive \
@@ -77,7 +77,8 @@ sudo apt-get install fonts-wqy-*
 sudo apt-get install ubuntu-desktop
 sudo apt-get install libx11*
 sudo apt-get install libx11-dev
-
+#添加用户到远程桌面用户组
+sudo adduser N3LK chrome-remote-desktop
 #} &> /dev/null &&
 printf "\nSetup Complete " >&2 ||
 printf "\nError Occured " >&2

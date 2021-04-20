@@ -5,16 +5,18 @@ sudo useradd -m N3LK
 sudo adduser N3LK sudo
 echo 'N3LK:0789' | sudo chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
-sudo apt-get update
+#sudo apt-get update
 #安装网络命令支持
 sudo apt install net-tools # ifconfig
 sudo apt install iputils-ping # ping
 #安装谷歌远程桌面
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 sudo dpkg --install chrome-remote-desktop_current_amd64.deb
-sudo apt install --assume-yes --fix-broken
+sudo adduser N3LK chrome-remote-desktop
+#sudo apt install --assume-yes --fix-broken
 #设置环境变量吗，非交互获得用户输入
 sudo DEBIAN_FRONTEND=noninteractive \
+
 #安装xfce4桌面
 #sudo apt install --assume-yes xfce4 desktop-base
 #sudo apt install xfce4-terminal
@@ -31,7 +33,8 @@ sudo systemctl disable lightdm.service
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
-sudo apt install nautilus nano -y
+#安装文件管理器和编辑器
+#sudo apt install nautilus nano -y
 #解决中文乱码
 sudo /usr/share/locales/install-language-pack zh_CN
 sudo apt-get install language-pack-zh-hans
@@ -74,7 +77,7 @@ sudo apt-get install fonts-wqy-*
 sudo apt-get install ubuntu-desktop
 sudo apt-get install libx11*
 sudo apt-get install libx11-dev
-sudo adduser N3LK chrome-remote-desktop
+
 #} &> /dev/null &&
 printf "\nSetup Complete " >&2 ||
 printf "\nError Occured " >&2

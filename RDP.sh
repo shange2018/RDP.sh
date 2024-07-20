@@ -15,12 +15,12 @@ sudo apt install --assume-yes --fix-broken
 sudo DEBIAN_FRONTEND=noninteractive \
 
 #安装xfce4桌面
-sudo apt install --assume-yes xfce4 desktop-base
-sudo apt install xfce4-terminal
-sudo apt remove gnome-terminal
-sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'  
-sudo apt install --assume-yes xscreensaver
-sudo systemctl disable lightdm.service
+apt install --assume-yes xfce4 desktop-base
+apt install xfce4-terminal
+apt remove gnome-terminal
+bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'  
+apt install --assume-yes xscreensaver
+systemctl disable lightdm.service
 
 #安装x window:
 #sudo apt-get install xorg
@@ -34,15 +34,15 @@ sudo systemctl disable lightdm.service
 
 #安装谷歌浏览器
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg --install google-chrome-stable_current_amd64.deb
-sudo apt install --assume-yes --fix-broken
+dpkg --install google-chrome-stable_current_amd64.deb
+apt install --assume-yes --fix-broken
 #安装文件管理器和文件编辑器
-sudo apt install nautilus nano -y 
+apt install nautilus nano -y 
 #添加用户到远程桌面用户组
-sudo adduser N3LK chrome-remote-desktop
+adduser N3LK chrome-remote-desktop
 #安装网络命令支持
-sudo apt install net-tools # ifconfig
-sudo apt install iputils-ping # ping
+apt install net-tools # ifconfig
+apt install iputils-ping # ping
 
 #安装中文字体
 #sudo /usr/share/locales/install-language-pack zh_CN
